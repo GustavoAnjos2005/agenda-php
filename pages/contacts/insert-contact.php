@@ -13,7 +13,7 @@ if (isset($_POST["btnAdd"])) {
     }
 
     $sql = "INSERT INTO dbcontatos (nomeContato, emailContato, telefoneContato, enderecoContato, sexoContato, dataNascimentoContato) 
-            VALUES (?, ?, ?, ?, ?, ?, 0)";
+            VALUES (?, ?, ?, ?, ?, ?)";
     $stmt = $conect->prepare($sql);
     if ($stmt) {
         $stmt->bind_param("ssssss", $nomeContato, $emailContato, $telefoneContato, $enderecoContato, $sexoContato, $dataNascimentoContato);
